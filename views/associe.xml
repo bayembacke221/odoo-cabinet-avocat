@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Ajout du model -->
+    <record id='avocat_associe_action' model='ir.actions.act_window'>
+        <field name="name"> Gestion de cabinet d'avocat  </field>
+        <field name="res_model">avocat.associe</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Ajout du menu -->
+    <menuitem name="Mon Agence de cabinet d'avocat" id="agence_base_menu" />
+    <menuitem name="Associe" id="agence_associe_menu"
+     parent="agence_base_menu" action="avocat_associe_action"/>
+
+    <!-- Ajout de la vue formulaire -->
+     <record id="avocat_associe_view_form" model="ir.ui.view">
+        <field name="name">Agence Cabinet Avocat Form</field>
+        <field name="model">avocat.associe</field>
+        <field name="arch" type="xml">
+            <form>
+            <sheet>
+                <group>
+                    <group>
+                        <field name="nom"/>
+                        <field name="prenom" />
+                        <field name="sexe" />
+                        <field name="fonction_associee" widget="many2one_tags"/>
+                    </group>
+                </group>
+            </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Ajout de la vue liste -->
+    <record id="avocat_associe_tree" model="ir.ui.view">
+        <field name="name">Agence Cabinet Avocat Liste</field>
+        <field name="model">avocat.associe</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nom"/>
+                <field name="prenom"/>
+                <field name="sexe"/>
+                <field name="fonction_associee"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="avocat_associe_search" model="ir.ui.view">
+        <field name="name">Cabinet Avocat Associé Recherche</field>
+        <field name="model">avocat.associe</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="nom"/>
+                <field name="prenom"/>
+                <field name="sexe"/>
+                <filter string="A valider"
+                        name="to_validate"
+                        domain="[('fonction_associee','=','new')]"/>
+            </search>
+        </field>
+    </record>
+
+</odoo>
