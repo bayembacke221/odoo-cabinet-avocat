@@ -2,6 +2,7 @@ from odoo import models, fields, api
 
 class FonctionAssociee(models.Model):
     _name = 'avocat.fonction'
+    _description = "Liste des fonctions associees"
 
     nom = fields.Char(required=True)
     liste_associe_ids = fields.One2many('avocat.associe', 'fonction_associee_id', string="Liste des Associés")

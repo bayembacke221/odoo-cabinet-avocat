@@ -8,5 +8,37 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-   
+    <record id="avocat_notaire_form_view" model="ir.ui.view">
+        <field name="name">Notaire Form View</field>
+        <field name="model">avocat.notaire</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="nom"/>
+                        <field name="prenom"/>
+                        <field name="sexe"/>
+                        <field name="type"/>
+                        <field name="date_integration"/>
+                        <field name="fonction_associee" widget="many2one"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+     <record id="avocat_notaire_tree_view" model="ir.ui.view">
+        <field name="name">Notaire Tree View</field>
+        <field name="model">avocat.notaire</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nom"/>
+                <field name="prenom"/>
+                <field name="sexe"/>
+                <field name="type"/>
+                <field name="date_integration"/>
+                <field name="fonction_associee" string="Fonction Associée"/>
+            </tree>
+        </field>
+    </record>
 </odoo>

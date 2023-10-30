@@ -2,6 +2,7 @@ from odoo import models, fields, api
 
 class Associe(models.Model):
     _name = 'avocat.associe'
+    _description = "Liste des associes"
 
     nom = fields.Char(required=True)
     prenom = fields.Char(required=True)
