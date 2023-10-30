@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Ajout du model -->
+    <record id='avocat_notaire_action' model='ir.actions.act_window'>
+        <field name="name"> Gestion de cabinet d'avocat  </field>
+        <field name="res_model">avocat.notaire</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+   
+</odoo>

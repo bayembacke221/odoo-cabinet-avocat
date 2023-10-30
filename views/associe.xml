@@ -8,46 +8,41 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- Ajout du menu -->
-    <menuitem name="Mon Agence de cabinet d'avocat" id="agence_base_menu" />
-    <menuitem name="Associe" id="agence_associe_menu"
-     parent="agence_base_menu" action="avocat_associe_action"/>
+  
+   <!-- Vue liste pour Associe -->
+   <record id="avocat_associe_tree" model="ir.ui.view">
+    <field name="name">Agence Cabinet Avocat Liste</field>
+    <field name="model">avocat.associe</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="nom"/>
+            <field name="prenom"/>
+            <field name="sexe"/>
+            <field name="fonction_associee_nom"/> <!-- Champ pour la fonction associée -->
+        </tree>
+    </field>
+</record>
 
-    <!-- Ajout de la vue formulaire -->
-     <record id="avocat_associe_view_form" model="ir.ui.view">
-        <field name="name">Agence Cabinet Avocat Form</field>
-        <field name="model">avocat.associe</field>
-        <field name="arch" type="xml">
-            <form>
+<!-- Vue formulaire pour Associe -->
+<record id="avocat_associe_view_form" model="ir.ui.view">
+    <field name="name">Associe Form</field>
+    <field name="model">avocat.associe</field>
+    <field name="arch" type="xml">
+        <form>
             <sheet>
                 <group>
-                    <group>
-                        <field name="nom"/>
-                        <field name="prenom" />
-                        <field name="sexe" />
-                        <field name="fonction_associee" widget="many2one_tags"/>
-                    </group>
+                    <field name="nom"/>
+                    <field name="prenom"/>
+                    <field name="sexe"/>
+                    <field name="fonction_associee_id" /> <!-- Champ pour la fonction associée -->
+                
                 </group>
             </sheet>
-            </form>
-        </field>
-    </record>
+        </form>
+    </field>
+</record>
 
-    <!-- Ajout de la vue liste -->
-    <record id="avocat_associe_tree" model="ir.ui.view">
-        <field name="name">Agence Cabinet Avocat Liste</field>
-        <field name="model">avocat.associe</field>
-        <field name="arch" type="xml">
-            <tree>
-                <field name="nom"/>
-                <field name="prenom"/>
-                <field name="sexe"/>
-                <field name="fonction_associee"/>
-            </tree>
-        </field>
-    </record>
-
-    <record id="avocat_associe_search" model="ir.ui.view">
+    <!-- <record id="avocat_associe_search" model="ir.ui.view">
         <field name="name">Cabinet Avocat Associé Recherche</field>
         <field name="model">avocat.associe</field>
         <field name="arch" type="xml">
@@ -60,6 +55,6 @@
                         domain="[('fonction_associee','=','new')]"/>
             </search>
         </field>
-    </record>
+    </record> -->
 
 </odoo>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Ajout du model -->
+    <record id='avocat_fonction_action' model='ir.actions.act_window'>
+        <field name="name"> Gestion de cabinet d'avocat  </field>
+        <field name="res_model">avocat.fonction</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+       <!-- Vue liste pour Fonction Associee -->
+    <record id="view_avocat_fonction_tree" model="ir.ui.view">
+        <field name="name">avocat.fonction.tree</field>
+        <field name="model">avocat.fonction</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nom"/>
+                <field name="nbr_associe"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vue formulaire pour Fonction Associee -->
+    <record id="avocat_fonction_view_form" model="ir.ui.view">
+        <field name="name">Fonction Associe Form</field>
+        <field name="model">avocat.fonction</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="nom"/>
+                        <field name="nbr_associe"/>
+                    </group>
+                    <group>
+                        <field name="liste_associe_ids"> <!-- Champ pour la liste des associés -->
+                            <tree editable="bottom">
+                                <field name="nom"/> <!-- Nom de l'associé -->
+                                <field name="prenom"/> <!-- Prénom de l'associé -->
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+
+    <!-- Ajout de la vue liste -->
+ 
+    <record id="view_avocat_fonction_tree" model="ir.ui.view">
+        <field name="name">avocat.fonction.tree</field>
+        <field name="model">avocat.fonction</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nom"/>
+                <field name="nbr_associe"/>
+            </tree>
+        </field>
+    </record>
+    
+
+
+
+</odoo>
