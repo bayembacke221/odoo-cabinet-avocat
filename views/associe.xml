@@ -18,7 +18,7 @@
             <field name="nom"/>
             <field name="prenom"/>
             <field name="sexe"/>
-            <field name="fonction_associee_nom"/> <!-- Champ pour la fonction associée -->
+            <field name="fonction_associee_nom" />
         </tree>
     </field>
 </record>
@@ -34,27 +34,14 @@
                     <field name="nom"/>
                     <field name="prenom"/>
                     <field name="sexe"/>
-                    <field name="fonction_associee_id" /> <!-- Champ pour la fonction associée -->
-                
+                    <field name="fonction_associee_id" />
+                    <field name="fonction_associee_nom" />
                 </group>
             </sheet>
         </form>
     </field>
 </record>
 
-    <!-- <record id="avocat_associe_search" model="ir.ui.view">
-        <field name="name">Cabinet Avocat Associé Recherche</field>
-        <field name="model">avocat.associe</field>
-        <field name="arch" type="xml">
-            <search>
-                <field name="nom"/>
-                <field name="prenom"/>
-                <field name="sexe"/>
-                <filter string="A valider"
-                        name="to_validate"
-                        domain="[('fonction_associee','=','new')]"/>
-            </search>
-        </field>
-    </record> -->
+   
 
 </odoo>

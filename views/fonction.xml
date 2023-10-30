@@ -31,14 +31,11 @@
                         <field name="nom"/>
                         <field name="nbr_associe"/>
                     </group>
-                    <group>
-                        <field name="liste_associe_ids"> <!-- Champ pour la liste des associés -->
-                            <tree editable="bottom">
-                                <field name="nom"/> <!-- Nom de l'associé -->
-                                <field name="prenom"/> <!-- Prénom de l'associé -->
-                            </tree>
-                        </field>
-                    </group>
+                    <notebook>
+                        <page string="Liste des associes">
+                            <field name="liste_associe_ids"></field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
